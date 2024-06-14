@@ -1,11 +1,17 @@
-{%  extends "base.html" %}
+{%  extends "catalog/base.html" %}
 
 {%  block content %}
 <h1>Author: {{ author.first_name }}</h1>
     <p><strong>First Name</strong> <a href="">{{ author.first_name }}</a></p>
     <p><strong>Last Name</strong> <a href="">{{ author.last_name }}</a></p>
     <p><strong>DOB</strong> <a href="">{{ author.date_of_birth }}</a></p>
-    <p><strong>DOD</strong> <a href="">{{ author.date_of_death }}</a>
+    <p><strong>DOD</strong> <a href="">{{ author.date_of_death }}</a></p>
+    <div>
+    {% if author.author_image %}
+        <img src="{{ author.author_image.url }}">
+    {% endif %}
+    </div>
+
     <h4>Books:</h4>
 
     {% if author.book_set.all %}
