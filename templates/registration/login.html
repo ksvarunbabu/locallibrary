@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "catalog/base.html" %}
 
 {% block content %}
   {% if form.errors %}
@@ -26,6 +26,11 @@
       </tr>
     </table>
     <input type="submit" value="login">
-    <input type="hidden" name="next" value="{{ next }}">
+      <input type="hidden" name="next" value="{{ next }}">
+        <p><strong>Don't have an account?</strong>
+         <a href="{% url 'register' %}"> Sign Up Now</a>
+        </p>
+    <p><a href="{% url 'password_reset' %}">Forgot password?</a></p>
+
   </form>
 {% endblock %}
